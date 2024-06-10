@@ -1,8 +1,10 @@
-// Eg: Bots - Types (Man, Animal, Rocket shape), Display only 1 3BHK prototype for show and not the complete building
+// Eg: Bots - Types (Man, Animal, Alien shape), Display only 1 3BHK prototype for show and not the complete building of flats
 // Create the multiple new objects in abundance by copying the already created prototype. Make 1 then copy/clone that multiple times
 // Registry: Saving all the templates/types of Bots
 // The Prototype design pattern is a creational pattern that focuses on creating new objects by cloning existing objects instead of starting from scratch. It provides a mechanism to copy an object's state efficiently, promoting performance and reducing code complexity.
 // Benefits: Improved Performance, Reduced Memory Consumption, Simplified Object Creation
+// [Singleton + Registry(Hashmap)] => To remove if-else statements (removes OCP)
+// EG: 1) Invoice (Types - Sales, Purchase, Service); 2) User (Types - Admin, Reader, Writer)
 
 package PrototypeRegister;
 
@@ -28,7 +30,7 @@ public class Client {
         s3.setId(102);
         s3.setPsp(90.8);
         s3.setBatch("March'23");
-        //s3.setIq(100); // Compile time error
+        //s3.setIq(100); // Compile time error (Good)
 
         Student s4 = s3.clone();
 

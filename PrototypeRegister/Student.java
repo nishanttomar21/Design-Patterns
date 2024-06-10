@@ -1,6 +1,6 @@
 package PrototypeRegister;
 
-public class Student implements Prototype {
+public class Student implements Prototype<Student> {
     private Integer id;
     private String name;
     private String batch;

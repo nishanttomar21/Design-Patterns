@@ -7,7 +7,7 @@ public class PhonePe {
         this.bankAPI = bankAPI;
     }
 
-    double doSomething() throws InterruptedException {
+    double doSomething() {
         double currentBalance = bankAPI.getBalance("accountNumber");
         return currentBalance * 2;
     }

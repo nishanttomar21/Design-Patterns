@@ -1,9 +1,9 @@
 package Builder;
 
 public class Student {
-    String name;
-    Integer age;
-    Double psp;
+    private final String name;
+    private final Integer age;
+    private final Double psp;
 
     private Student(Builder builder) {
         // Validation

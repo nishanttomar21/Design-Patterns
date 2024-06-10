@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StudentRegistry {
-    private Map<String, Student> map = new HashMap<>();
+    private Map<String, Student> map = new HashMap<>(); // Map<Type, Student>, type tells type of student which can be an enum {Average, Intelligent, Duffer}
 
     public void register(String key, Student value) {
         map.put(key, value);
@@ -17,4 +17,17 @@ public class StudentRegistry {
     public Student get(String key) {
         return map.get(key).clone();
     }
+
+    // Prototype can be directly cloned in registry as well
+//    public Student clone(StudentType type){ // Add type field in Student class as well
+//        return map.get(type).cloneObject();
+//    }
 }
+
+
+//public enum StudentType {
+//    AVERAGE,
+//    INTELLIGENT,
+//    BELOW_AVERAGE,
+//    POOR
+//}

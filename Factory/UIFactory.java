@@ -9,11 +9,11 @@ import Factory.UIComponentFactory;
 
 public class UIFactory {
     public static UIComponentFactory getUIComponentFactoryByPlatform(String platform){
-        if(platform.equals("Android")){
+        if(platform.equals("Android"))
             return new AndroidUIComponentFactory();
-        } else if (platform.equals("IOS")){
+        else if (platform.equals("IOS"))
             return new IOSUIComponentFactory();
-        }
+
         return null;
     }
 }

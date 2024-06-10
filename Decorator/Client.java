@@ -1,4 +1,4 @@
-// Eg: Coffee House (Customise coffee with multiple add-on options and get it bill)
+// Eg: Coffee House (Customise coffee with multiple add-on options and get its bill)
 // The decorator design pattern is a structural pattern that allows you to attach additional functionalities to an object dynamically, without altering its original structure. It provides a flexible alternative to subclassing for extending object behavior.
 // Intent:
     // Add new responsibilities to objects at runtime.
@@ -16,7 +16,7 @@ public class Client {
         Beverage b = new Espresso();
         b.getCost();
 
-        // Espresso with WHip and Milk
+        // Espresso with Whip and Milk
         Beverage cb = new Espresso();
         cb = new Whip(cb);
         cb = new Milk(cb);

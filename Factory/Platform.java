@@ -1,5 +1,11 @@
 // Flutter - Same button creation code on client-side for Android and iOS
-// This class can be interface as well, but is not because of createUIComponentFactory(String platform), so that if from client platform is entered then you should that platforms object only
+// Factory method - createUIComponentFactory()
+// Make Factory interface when client uses this implementation:
+//      Platform p = new Android();
+//      UIComponentFactory uiComponentFactory = p.createUIComponentFactory();
+// Make Factory abstract class/normal class when client uses this implementation:
+//      Platform p1 = new Platform();
+//      UIComponentFactory uiComponentFactory1 = p.createUIComponentFactory("Android");
 
 package Factory;
 
@@ -16,7 +22,12 @@ public class Platform {
         return UIFactory.getUIComponentFactoryByPlatform(platform);
     }
 
-     public UIComponentFactory createUIComponentFactory(){
+/* if (platform.equals("Android"))
+        return new AndroidUIComponentFactory();
+else if (platform.equals("IOS"))
+        return new IOSUIComponentFactory(); */
+
+    public UIComponentFactory createUIComponentFactory(){
         return null;
     }
 }

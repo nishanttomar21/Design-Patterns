@@ -3,7 +3,7 @@ package Singleton;
 public class Singleton {
     private static Singleton singleton = null;
 
-    // Set default values, perform validation, initialise resources
+    // Set default values, perform validation, initialise resources (logger, database)
     private Singleton(){}   // Private constructor
 
     // Public method to provide access to the instance

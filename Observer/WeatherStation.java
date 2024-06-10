@@ -14,8 +14,7 @@ public class WeatherStation {
 		WeatherData weatherData = new WeatherData();
 
 		// created new subscribers
-		CurrentConditionsDisplay currentDisplay = 
-			new CurrentConditionsDisplay(weatherData);
+		CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
 		StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
 		ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
 

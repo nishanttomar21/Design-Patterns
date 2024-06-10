@@ -1,8 +1,8 @@
-// Eg: Birds using <<Flyable>> interface with functions  because some bird can fly and some cannot
+// Eg: Birds using <<Flyable>> interface with functions because some bird can fly and some cannot
 // Eg: Rainwater Question in DSA, 3 solutions possible (use 1 object for each solution to implement)
 // Eg: GoogleMaps, options to find the distance - Car, Public transport, Walk, Bike (Below explanation)
 // When there is more than 1 way to solve a problem, then don't use if-else statements, rather create object for each of the solution.
-// Use Strategies - Factory (To avoid SRP), [Singleton + Registry] => To remove if-else statements (removes OCP)
+// Use Strategies - Factory (To avoid SRP), [Singleton + Registry(Hashmap)] => To remove if-else statements (removes OCP)
 // The Strategy design pattern is a behavioral design pattern that enables selecting an algorithm's behavior at runtime. This pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. The Strategy pattern allows the algorithm to vary independently from the clients that use it.
 // When to Use the Strategy Pattern:
     // When you have multiple related classes that differ only in their behavior.
