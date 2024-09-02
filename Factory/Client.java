@@ -19,7 +19,7 @@ public class Client {
 
         Platform p1 = new Platform();
         UIComponentFactory uiComponentFactory1 = p.createUIComponentFactory("Android");
-        Button b1 = uiComponentFactory.createButton();
+        Button b1 = uiComponentFactory1.createButton();
         b1.getSize();
 //        if(p is a type of Android){
 //            new AndroidButton;

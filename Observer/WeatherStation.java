@@ -1,9 +1,10 @@
 // The Observer design pattern is a behavioral design pattern that defines a one-to-many relationship between objects so that when one object changes state, all its dependents are notified and updated automatically. This pattern is particularly useful for implementing distributed event-handling systems.
-// Eg: Weather Station
+// Eg: Weather Station, Notification System
 // Benefits:
 	// Loose Coupling: Subjects and observers are loosely coupled. The subject only knows the observers through the observer interface, which allows for flexibility and scalability.
 	// Dynamic Relationships: Observers can be added or removed at runtime, making the system more flexible.
 	// Event Handling: Useful for implementing distributed event-handling systems where a change in one part of the system needs to be communicated to other parts.
+// Zookeeper uses this design pattern
 
 package Observer;
 

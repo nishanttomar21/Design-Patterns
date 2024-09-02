@@ -9,7 +9,7 @@ public class Singleton {
     // Public method to provide access to the instance
     public static Singleton getInstance() {
         if (singleton == null)
-            synchronized(Singleton.class) {     // Double check locking
+            synchronized(Singleton.class) {     // Double check-locking
                 if (singleton == null)
                     singleton = new Singleton();
             }
