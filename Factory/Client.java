@@ -37,7 +37,7 @@
          - Strategy Pattern: Use a Factory to create different Strategy objects.
          - Dependency Injection: Inject different Factory implementations at runtime.
 
-    C. TODO [Factory, Design use cases]:
+    C. TODO [Factory, Strategy Design use cases]:
 
      1. Factory Design Pattern:
          a. Object Creation Complexity:
