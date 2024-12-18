@@ -16,21 +16,18 @@
 //      Validation	                Harder to enforce field validation.	                            Validation logic can be encapsulated in the build() method.
 //      Large Constructors	        Solves the issue partially by reducing constructor parameters.	Completely avoids large constructors.
 
-package Builder;
+package Builder.WithBuilder;
 
 public class Client {
     public static void main(String[] args) {
-        // Builder Design Pattern
-        Student student = Student.getBuilder()
-                            .setName("Nishant")
-                            .setAge(28)
-                            .setPsp(80.2)
-                            .build();
+        // Builder Design Pattern -- Immutable
+        Car car = Car.getBuilder()
+                .setEngine("V8")
+                .setWheels(4)
+                .setAirbags(true)
+                .setSunroof(true)
+                .build();
 
-        // Student student = new Student(builder);
         System.out.println("\nYES, Builder design pattern Implemented Successfully!!");
-        System.out.println(student.getName());
-        System.out.println(student.getAge());
-        System.out.println(student.getPsp());
     }
 }
