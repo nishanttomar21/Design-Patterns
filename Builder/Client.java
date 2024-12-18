@@ -7,6 +7,14 @@
 //      No Setters: The target class does not provide any setter methods, preventing modification after the object is constructed.
 //      Private Constructor: The constructor of the target class is private, ensuring that the object can only be instantiated through the Builder.
 //      Builder Class: The Builder class sets all the necessary fields and then constructs the target class instance. After construction, the Builder is discarded, and no modifications can be made to the target class instance.
+// Setters vs Builder Pattern
+//      Feature	                    Setters	                                                        Builder Pattern
+//      Mutability	                Object is mutable, can change values later	                    Object is immutable after creation.
+//      Object Construction	        Object is created in multiple steps (constructor + setters)	    All steps are done in a single flow.
+//      Readability	                Readability may reduce for many optional parameters.	        Fluent API makes object construction readable.
+//      Thread-Safety	            Requires extra care for thread safety.	                        Easy to make thread-safe with immutable objects.
+//      Validation	                Harder to enforce field validation.	                            Validation logic can be encapsulated in the build() method.
+//      Large Constructors	        Solves the issue partially by reducing constructor parameters.	Completely avoids large constructors.
 
 package Builder;
 
