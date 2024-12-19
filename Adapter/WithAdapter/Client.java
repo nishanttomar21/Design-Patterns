@@ -8,16 +8,16 @@
 // Benefits: Promotes Reusability, Reduces Coupling, Increases Flexibility
 // Eg: Social Media Aggregator (Facebook, Google), Language translators (Google Translate, Microsoft Translator), Insurance Providers Integration (AutoProtect, TravelGuard)   nb
 
-package Adapter;
 
-//import WithoutAdapter.PhonePe;
+package Adapter.WithAdapter;
+
+import org.example.Adapter.WithoutAdapter.PhonePe;
 
 public class Client {
-    public static void main(String[] args) throws InterruptedException {
-        // userInputUPI
-        // BankAPIAdapterFactory - Use factory design pattern get user input for bank selection and then use adapter to process the request forward
-        BankAPIAdapter bankAPIAdapter = new ICICIBankAPIAdapter(); // Pass the object according to the user input passed from factory method
-        PhonePe phonePe = new PhonePe(bankAPIAdapter);
-        phonePe.doSomething();
+    public static void main(String[] args) {
+        PhonePe phonePe = new PhonePe();
+        int balance = phonePe.checkBalance();
+
+        System.out.println("Balance: " + balance);
     }
 }

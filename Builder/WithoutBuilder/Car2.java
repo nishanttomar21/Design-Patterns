@@ -1,3 +1,12 @@
+// Setters vs Builder Pattern
+//      Feature	                    Setters	                                                        Builder Pattern
+//      Mutability	                Object is mutable, can change values later	                    Object is immutable after creation.
+//      Object Construction	        Object is created in multiple steps (constructor + setters)	    All steps are done in a single flow.
+//      Readability	                Readability may reduce for many optional parameters.	        Fluent API makes object construction readable.
+//      Thread-Safety	            Requires extra care for thread safety.	                        Easy to make thread-safe with immutable objects.
+//      Validation	                Harder to enforce field validation.	                            Validation logic can be encapsulated in the build() method.
+//      Large Constructors	        Solves the issue partially by reducing constructor parameters.	Completely avoids large constructors.
+
 package Builder.WithoutBuilder;
 
 public class Car2 {
