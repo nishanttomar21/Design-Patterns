@@ -10,50 +10,16 @@ package PrototypeRegister;
 
 public class Client {
     public static void main(String[] args) {
-        // Prototype
-        Student s1 = new Student();
-        s1.setName("Nishant Tomar");
-        s1.setId(101);
-        s1.setPsp(80.2);
-        s1.setBatch("April'23");
+        BotRegistry botRegistry = new BotRegistry();
 
-        Student s2 = s1.clone();
+        // Register the bots
+        botRegistry.registerBot("CombatBot", new CombatBot("Combat Bot"));
+        botRegistry.registerBot("MedicBot", new MedicBot("Medic Bot"));
 
-        System.out.println();
-        System.out.println(s2.getName());
-        System.out.println(s2.getId());
-        System.out.println(s2.getBatch());
-        System.out.println(s2.getPsp());
+        // Retrieve Cloned Bots from the registry
+        Bot<CombatBot> clonedBot1 = botRegistry.createBot("CombatBot");
 
-        Student s3 = new IntelligentStudent();
-        s3.setName("Megha Singh");
-        s3.setId(102);
-        s3.setPsp(90.8);
-        s3.setBatch("March'23");
-        //s3.setIq(100); // Compile time error (Good)
-
-        Student s4 = s3.clone();
-
-        System.out.println();
-        //System.out.println(s4.getIq()); // Compile time error
-        System.out.println(s4.getName());
-        System.out.println(s4.getId());
-        System.out.println(s4.getBatch());
-        System.out.println(s4.getPsp());
-
-        // Registry (Register templates of prototype)
-        StudentRegistry studentRegistry = new StudentRegistry();
-        studentRegistry.register("s1", s1);
-        studentRegistry.register("s3", s3);
-
-        Student s5 = studentRegistry.get("s1");
-        System.out.println();
-        System.out.println(s5.getName());
-        System.out.println(s5.getId());
-        System.out.println(s5.getBatch());
-        System.out.println(s5.getPsp());
-
-        if (s1 != s5)
-            System.out.println("\nNew copy object created successfully!!");
+        Bot<CombatBot> bot2 = new CombatBot("Combat Bot");
+        Bot<CombatBot> clonedBot2 = bot2.cloneBot();
     }
 }
