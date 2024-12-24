@@ -11,7 +11,6 @@
 
 package Adapter.WithAdapter;
 
-import org.example.Adapter.WithoutAdapter.PhonePe;
 
 public class Client {
     public static void main(String[] args) {

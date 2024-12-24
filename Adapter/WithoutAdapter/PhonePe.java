@@ -2,7 +2,8 @@
 
 package Adapter.WithoutAdapter;
 
-import org.example.Adapter.WithoutAdapter.ThirdPartyAPI.YesBankApi;
+
+import Adapter.WithAdapter.ThirdPartyAPI.YesBankApi;
 
 public class PhonePe {
     public int checkBalance() {

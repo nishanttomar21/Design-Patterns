@@ -1,0 +1,83 @@
+// Product Interfaces
+// Component1/Family1: Button
+public interface Button {
+    void render();
+}
+
+// Component2/Family2: Checkbox
+public interface Checkbox {
+    void render();
+}
+
+// Windows Family of Products
+public class WindowsButton implements Button {
+    @Override
+    public void render() {
+        System.out.println("Rendering Windows Button");
+    }
+}
+
+public class WindowsCheckbox implements Checkbox {
+    @Override
+    public void render() {
+        System.out.println("Rendering Windows Checkbox");
+    }
+}
+
+// MacOS Family of Products
+public class MacOSButton implements Button {
+    @Override
+    public void render() {
+        System.out.println("Rendering MacOS Button");
+    }
+}
+
+public class MacOSCheckbox implements Checkbox {
+    @Override
+    public void render() {
+        System.out.println("Rendering MacOS Checkbox");
+    }
+}
+
+// Abstract Factory(*)
+public interface GUIFactory {
+    Button createButton();      // Component1/Family1
+    Checkbox createCheckbox();  // Component2/Family2
+}
+
+// Concrete Factories
+public class WindowsFactory implements GUIFactory {     // Factory1
+    @Override
+    public Button createButton() {
+        return new WindowsButton();
+    }
+
+    @Override
+    public Checkbox createCheckbox() {
+        return new WindowsCheckbox();
+    }
+}
+
+public class MacOSFactory implements GUIFactory {       // Factory2
+    @Override
+    public Button createButton() {
+        return new MacOSButton();
+    }
+
+    @Override
+    public Checkbox createCheckbox() {
+        return new MacOSCheckbox();
+    }
+}
+
+// Client Code
+public class AbstractFactoryDemo {
+    public static void main(String[] args) {
+        GUIFactory factory = new WindowsFactory();
+        Button button = factory.createButton();
+        Checkbox checkbox = factory.createCheckbox();
+
+        button.render();      // Output: Rendering Windows Button
+        checkbox.render();    // Output: Rendering Windows Checkbox
+    }
+}

@@ -2,7 +2,7 @@
 
 package Adapter.WithAdapter;
 
-import org.example.Adapter.WithoutAdapter.ThirdPartyAPI.IciciBankApi;
+import Adapter.WithoutAdapter.ThirdPartyAPI.IciciBankApi;
 
 public class IciciBankApiAdapter implements BankApiAdapter{
     private IciciBankApi api = new IciciBankApi();

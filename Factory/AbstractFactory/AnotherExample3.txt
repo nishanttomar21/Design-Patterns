@@ -1,0 +1,110 @@
+// Another way of using Abstract factory Design (w/o OCP violation)
+
+// Interface for database operations (connect and execute query)
+// Create only 1 interface for all the operations
+interface DatabaseOperations {
+    void connect();
+    void executeQuery(String query);
+}
+
+// Concrete class for MySQL operations
+class MySQLOperations implements DatabaseOperations {
+    @Override
+    public void connect() {
+        System.out.println("Connecting to MySQL database...");
+    }
+
+    @Override
+    public void executeQuery(String query) {
+        System.out.println("Executing MySQL query: " + query);
+    }
+}
+
+// Concrete class for PostgreSQL operations
+class PostgreSQLOperations implements DatabaseOperations {
+    @Override
+    public void connect() {
+        System.out.println("Connecting to PostgreSQL database...");
+    }
+
+    @Override
+    public void executeQuery(String query) {
+        System.out.println("Executing PostgreSQL query: " + query);
+    }
+}
+
+// Concrete class for SQLite operations
+class SQLiteOperations implements DatabaseOperations {
+    @Override
+    public void connect() {
+        System.out.println("Connecting to SQLite database...");
+    }
+
+    @Override
+    public void executeQuery(String query) {
+        System.out.println("Executing SQLite query: " + query);
+    }
+}
+
+// Abstract Factory Interface for creating database operations
+interface DatabaseFactory {
+    DatabaseOperations createDatabaseOperations();
+}
+
+// Concrete Factory for MySQL
+class MySQLFactory implements DatabaseFactory {
+    @Override
+    public DatabaseOperations createDatabaseOperations() {
+        return new MySQLOperations();
+    }
+}
+
+// Concrete Factory for PostgreSQL
+class PostgreSQLFactory implements DatabaseFactory {
+    @Override
+    public DatabaseOperations createDatabaseOperations() {
+        return new PostgreSQLOperations();
+    }
+}
+
+// Concrete Factory for SQLite
+class SQLiteFactory implements DatabaseFactory {
+    @Override
+    public DatabaseOperations createDatabaseOperations() {
+        return new SQLiteOperations();
+    }
+}
+
+// Singleton Factory Registry(*) to map dbType to Factory (********) [This removes OCP violation from the previous example]
+class FactoryRegistry {
+    private static final Map<String, DatabaseFactory> factoryMap = new HashMap<>();
+
+    static {
+        // Registering factories with dbType as key
+        factoryMap.put("MySQL", new MySQLFactory());
+        factoryMap.put("PostgreSQL", new PostgreSQLFactory());
+        factoryMap.put("SQLite", new SQLiteFactory());
+    }
+
+    // Get factory based on dbType
+    public static DatabaseFactory getFactory(String dbType) {
+        return factoryMap.get(dbType);
+    }
+}
+
+// Client class to interact with the abstract factory
+public class AbstractFactoryDatabaseDemo {
+    public static void main(String[] args) {
+        String dbType = "MySQL"; // For testing; this could come from user input
+
+        // Get the appropriate factory based on dbType without modifying existing code
+        DatabaseFactory factory = FactoryRegistry.getFactory("dbType");
+
+        // Use the factory to create database operations
+        DatabaseOperations operations = factory.createDatabaseOperations();
+
+        // Connect to the database and execute a query
+        operations.connect();
+        operations.executeQuery("SELECT * FROM users");
+    }
+}

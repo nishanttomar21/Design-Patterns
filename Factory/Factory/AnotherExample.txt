@@ -1,0 +1,48 @@
+// Define the Button interface/component
+// Component/Family
+interface Button {
+    void createButton();
+}
+
+// Concrete implementation for iOS button
+class IOSButton implements Button {
+    @Override
+    public void render() {
+        System.out.println("Rendering an iOS-style button");
+    }
+}
+
+// Concrete implementation for Android button
+class AndroidButton implements Button {
+    @Override
+    public void render() {
+        System.out.println("Rendering an Android-style button");
+    }
+}
+
+// Factory class to create buttons
+class ButtonFactory {       // Factory
+    public static Button createButton(String platform) {
+        switch (platform.toLowerCase()) {
+            case "ios":
+                return new IOSButton();
+            case "android":
+                return new AndroidButton();
+            default:
+                throw new IllegalArgumentException("Unsupported platform: " + platform);
+        }
+    }
+}
+
+// Main class to test the factory pattern
+public class Main {
+    public static void main(String[] args) {
+        // Create and render an iOS button
+        Button iosButton = ButtonFactory.createButton("ios");
+        iosButton.render(); // Output: Rendering an iOS-style button
+
+        // Create and render an Android button
+        Button androidButton = ButtonFactory.createButton("android");
+        androidButton.render(); // Output: Rendering an Android-style button
+    }
+}
