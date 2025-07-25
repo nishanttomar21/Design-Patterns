@@ -57,7 +57,7 @@ Refactor a small project or create a new one using several design patterns.
 Participate in a code review focusing on design patterns.
 By incorporating these strategies into your routine, you'll develop a deep understanding and long-lasting memory of design patterns.
 
-[*********] Important Design Patterns To remember: 
+Important Design Patterns To remember: 
 1. Singleton
 2. Builder
 3. Factory Method (*)
